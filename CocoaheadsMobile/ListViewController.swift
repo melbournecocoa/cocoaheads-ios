@@ -30,9 +30,19 @@ class ListViewController: UITableViewController, SegueHandlerType {
             startLoading()
         }
     }
+  
+  func startLoading() {
+    if let control = self.refreshControl {
+      if !control.isRefreshing {
+        control.beginRefreshing()
+      }
+    }
     
+    loadEvents()
+  }
+  
     //MARK: API requests
-    
+  
     func loadEvents() {
         EventsAPI.getEvents { response, error in
             guard let response = response else {
@@ -57,16 +67,6 @@ class ListViewController: UITableViewController, SegueHandlerType {
         if sender.isRefreshing {
             startLoading()
         }
-    }
-    
-    func startLoading() {
-        if let control = self.refreshControl {
-            if control.isRefreshing {
-                control.beginRefreshing()
-            }
-        }
-        
-        loadEvents()
     }
     
     func finishLoading() {
