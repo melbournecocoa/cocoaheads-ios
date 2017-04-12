@@ -18,7 +18,7 @@ class ListViewController: UITableViewController, SegueHandlerType {
     var events:[ListEvent] = [] {
         didSet {
             print("Did set \(events.count) events.")
-
+            
             self.tableView.reloadData()
         }
     }
@@ -30,34 +30,39 @@ class ListViewController: UITableViewController, SegueHandlerType {
             startLoading()
         }
     }
-  
-  func startLoading() {
-    if let control = self.refreshControl {
-      if !control.isRefreshing {
-        control.beginRefreshing()
-      }
+    
+    func startLoading() {
+        if let control = self.refreshControl {
+            if !control.isRefreshing {
+                control.beginRefreshing()
+            }
+        }
+        
+        loadEvents()
     }
     
-    loadEvents()
-  }
-  
     //MARK: API requests
-  
+    
     func loadEvents() {
         EventsAPI.getEvents { response, error in
-            guard let response = response else {
-                self.events = []
-                return
-            }
-            
-            guard let events = response.events, events.count > 0 else {
-                self.events = []
-                return
-            }
             
             self.finishLoading()
             
-            self.events = events.flatMap { ListEvent(fromEvent:$0) }
+            switch (response, error) {
+            case let (.some(response), .none()):
+                guard let events = response.events else {
+                    self.displayEvents([])
+                    return
+                }
+                self.displayEvents(events.flatMap { ListEvent(fromEvent:$0) })
+            case let (.none, .some(error)):
+                self.displayError(error: error)
+            default:
+                // There is a case where we could receive no-content from the API.
+                // Here we'd receive no response and no error.
+                self.displayEvents([])
+                break
+            }
         }
     }
     
@@ -80,8 +85,18 @@ class ListViewController: UITableViewController, SegueHandlerType {
         cell.detailTextLabel?.text = event.subtitle
     }
     
-    //MARK: Segue
+    //MARK: Error States
     
+    func displayError(error:Error) {
+        //TODO: JC - Display Error
+    }
+
+    func displayEvents(_ events:[ListEvent]) {
+        self.events = events
+    }
+    
+    //MARK: Segue
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segueIdentifierForSegue(segue) {
             switch (identifier) {
