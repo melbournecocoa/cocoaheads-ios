@@ -30,6 +30,8 @@
 		150C8EAC1E99EC8100CB4D16 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150C8EAB1E99EC8100CB4D16 /* UIView+Extensions.swift */; };
 		150C8EB61E99F72600CB4D16 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150C8EB51E99F72600CB4D16 /* OverlayViewController.swift */; };
 		150C8EB91E9A19B000CB4D16 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150C8EA21E99DFAD00CB4D16 /* EventDetailViewController.swift */; };
+		15ECAE951E9EE50B00487E4F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ECAE941E9EE50B00487E4F /* Result.swift */; };
+		15ECAE981E9EE88C00487E4F /* EventsAPI+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ECAE971E9EE88C00487E4F /* EventsAPI+Result.swift */; };
 		52ED999BB0B065405DE74DB9 /* Pods_CocoaheadsMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070B346734C1DF555B83FCE2 /* Pods_CocoaheadsMobile.framework */; };
 		F229E7C1BE71633353895449 /* Pods_APIClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7830F0A62483F34F4F650F /* Pods_APIClient.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +87,8 @@
 		150C8EA91E99EADE00CB4D16 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		150C8EAB1E99EC8100CB4D16 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		150C8EB51E99F72600CB4D16 /* OverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
+		15ECAE941E9EE50B00487E4F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		15ECAE971E9EE88C00487E4F /* EventsAPI+Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventsAPI+Result.swift"; sourceTree = "<group>"; };
 		24EEAD5DDDD30139C3D44F23 /* Pods-CocoaheadsMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaheadsMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaheadsMobile/Pods-CocoaheadsMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		6B4DD9724993CE638C391CB8 /* Pods-APIClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-APIClient/Pods-APIClient.release.xcconfig"; sourceTree = "<group>"; };
 		7C7830F0A62483F34F4F650F /* Pods_APIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,11 +141,13 @@
 		150C8E661E99C62000CB4D16 /* CocoaheadsMobile */ = {
 			isa = PBXGroup;
 			children = (
+				15ECAE961E9EE87400487E4F /* APIClient Extensions */,
 				150C8E9F1E99DAE000CB4D16 /* Models */,
 				150C8EB31E99F6D600CB4D16 /* Controllers */,
 				150C8EA41E99E04000CB4D16 /* ResourceIdentifiers.swift */,
 				150C8EA71E99E80000CB4D16 /* SegueHandlerType.swift */,
 				150C8EAB1E99EC8100CB4D16 /* UIView+Extensions.swift */,
+				15ECAE941E9EE50B00487E4F /* Result.swift */,
 				150C8EA61E99E08100CB4D16 /* Resources */,
 			);
 			path = CocoaheadsMobile;
@@ -210,6 +216,14 @@
 				150C8EB51E99F72600CB4D16 /* OverlayViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		15ECAE961E9EE87400487E4F /* APIClient Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15ECAE971E9EE88C00487E4F /* EventsAPI+Result.swift */,
+			);
+			name = "APIClient Extensions";
 			sourceTree = "<group>";
 		};
 		16DBBA71E0093D4DBA1FC3DB /* Frameworks */ = {
@@ -432,7 +446,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15ECAE951E9EE50B00487E4F /* Result.swift in Sources */,
 				150C8E6A1E99C62000CB4D16 /* ListViewController.swift in Sources */,
+				15ECAE981E9EE88C00487E4F /* EventsAPI+Result.swift in Sources */,
 				150C8E9E1E99DADC00CB4D16 /* ListEvent.swift in Sources */,
 				150C8EB91E9A19B000CB4D16 /* EventDetailViewController.swift in Sources */,
 				150C8EA51E99E04000CB4D16 /* ResourceIdentifiers.swift in Sources */,
