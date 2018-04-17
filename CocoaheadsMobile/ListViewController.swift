@@ -44,24 +44,20 @@ class ListViewController: UITableViewController, SegueHandlerType {
     //MARK: API requests
     
     func loadEvents() {
-        EventsAPI.getEvents { response, error in
+        EventsAPI.getEvents { (result:Result<EventsResponse>) in
             
             self.finishLoading()
             
-            switch (response, error) {
-            case let (.some(response), .none()):
+            switch result {
+            case let .success(response):
                 guard let events = response.events else {
                     self.displayEvents([])
                     return
                 }
-                self.displayEvents(events.flatMap { ListEvent(fromEvent:$0) })
-            case let (.none, .some(error)):
+                
+                self.events = events.flatMap { ListEvent(fromEvent:$0) }
+            case let .failure(error):
                 self.displayError(error: error)
-            default:
-                // There is a case where we could receive no-content from the API.
-                // Here we'd receive no response and no error.
-                self.displayEvents([])
-                break
             }
         }
     }
