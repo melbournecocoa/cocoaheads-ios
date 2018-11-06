@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-import APIClient
+import CocoaHeadsAPIClient
 
 struct ListEvent {
     let title: String

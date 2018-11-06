@@ -6,7 +6,7 @@
 //  Copyright © 2017 Melbourne CocoaHeads. All rights reserved.
 //
 
-import APIClient
+import CocoaHeadsAPIClient
 
 typealias EventsResponse = InlineResponse200
 typealias EventResponse = InlineResponse2001

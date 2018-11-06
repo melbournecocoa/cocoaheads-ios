@@ -1,16 +1,29 @@
 PODS:
   - Alamofire (4.7.3)
+  - CocoaHeadsAPIClient (1.0.0):
+    - Alamofire (~> 4.7.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.3)
+  - CocoaHeadsAPIClient (from `https://github.com/melbournecocoa/cocoaheads-api-client.git`, tag `1.0.1`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
 
+EXTERNAL SOURCES:
+  CocoaHeadsAPIClient:
+    :git: https://github.com/melbournecocoa/cocoaheads-api-client.git
+    :tag: 1.0.1
+
+CHECKOUT OPTIONS:
+  CocoaHeadsAPIClient:
+    :git: https://github.com/melbournecocoa/cocoaheads-api-client.git
+    :tag: 1.0.1
+
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  CocoaHeadsAPIClient: 0af8841112215efa714bc76a5eb4f373a8c17d25
 
-PODFILE CHECKSUM: 9566dbd50d958b9ad1a8bbd28b76c061bd9124e6
+PODFILE CHECKSUM: 4c886676041f72a472083ab256d0b5ffe81a209b
 
 COCOAPODS: 1.5.3
