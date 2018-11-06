@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_APIClientVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_APIClientVersionString[];
+FOUNDATION_EXPORT double CocoaHeadsAPIClientVersionNumber;
+FOUNDATION_EXPORT const unsigned char CocoaHeadsAPIClientVersionString[];
 

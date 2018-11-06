@@ -1,12 +1,8 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '12.0'
 
 target 'CocoaheadsMobile' do
   use_frameworks!
-end
 
-target 'APIClient' do
-  use_frameworks!
-  
-  pod 'Alamofire', '~>4.3'
+  pod 'CocoaHeadsAPIClient', :git => 'https://github.com/melbournecocoa/cocoaheads-api-client.git', :tag => '1.0.1'
 end

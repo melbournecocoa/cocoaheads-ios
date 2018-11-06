@@ -1,0 +1,23 @@
+{
+  "name": "CocoaHeadsAPIClient",
+  "platforms": {
+    "ios": "9.0",
+    "osx": "10.11",
+    "tvos": "9.0"
+  },
+  "version": "1.0.0",
+  "source": {
+    "git": "git@github.com:OpenAPITools/openapi-generator.git",
+    "tag": "v1.0.0"
+  },
+  "authors": "OpenAPI Generator",
+  "license": "Proprietary",
+  "homepage": "https://github.com/OpenAPITools/openapi-generator",
+  "summary": "OpenAPIClient Swift SDK",
+  "source_files": "OpenAPIClient/Classes/**/*.swift",
+  "dependencies": {
+    "Alamofire": [
+      "~> 4.7.0"
+    ]
+  }
+}

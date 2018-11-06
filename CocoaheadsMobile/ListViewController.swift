@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import APIClient
+import CocoaHeadsAPIClient
 
 class ListViewController: UITableViewController, SegueHandlerType {
     
