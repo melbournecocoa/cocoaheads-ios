@@ -1,2 +1,4 @@
 # cocoaheads-ios
-iOS client for cocoaheads events
+iOS client for Melbourne CocoaHeads events
+
+

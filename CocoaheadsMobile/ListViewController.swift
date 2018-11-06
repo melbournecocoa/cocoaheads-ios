@@ -55,7 +55,7 @@ class ListViewController: UITableViewController, SegueHandlerType {
                     return
                 }
                 
-                self.events = events.flatMap { ListEvent(fromEvent:$0) }
+                self.displayEvents = events.compactMap { ListEvent(fromEvent:$0) }
             case let .failure(error):
                 self.displayError(error: error)
             }
