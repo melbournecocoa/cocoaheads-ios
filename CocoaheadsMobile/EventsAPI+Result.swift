@@ -8,6 +8,9 @@
 
 import APIClient
 
+typealias EventsResponse = InlineResponse200
+typealias EventResponse = InlineResponse2001
+
 extension EventsAPI {
     class func getEvents(completion: @escaping ((_ result: Result<EventsResponse>) -> Void)) {
         getEvents { response, error in
@@ -15,4 +18,6 @@ extension EventsAPI {
             completion(Result(response, failWith: error!))
         }
     }
+
+    //TODO: Add the same for the getEvent endpoint
 }
