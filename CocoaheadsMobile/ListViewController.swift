@@ -27,7 +27,7 @@ class ListViewController: UITableViewController, SegueHandlerType {
         super.viewDidLoad()
         
         if self.events.isEmpty {
-            startLoading()
+            self.startLoading()
         }
     }
     
@@ -38,7 +38,7 @@ class ListViewController: UITableViewController, SegueHandlerType {
             }
         }
         
-        loadEvents()
+        self.loadEvents()
     }
     
     //MARK: API requests
@@ -50,12 +50,7 @@ class ListViewController: UITableViewController, SegueHandlerType {
             
             switch result {
             case let .success(response):
-                guard let events = response.events else {
-                    self.displayEvents([])
-                    return
-                }
-                
-                self.displayEvents = events.compactMap { ListEvent(fromEvent:$0) }
+                self.displayEvents(response.data.compactMap { ListEvent(fromEvent:$0) })
             case let .failure(error):
                 self.displayError(error: error)
             }
